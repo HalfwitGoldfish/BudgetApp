@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/src/output.css" rel="stylesheet">
+  <title>Budgeting With Bobby</title>
+</head>
+<body class="bg-gray-950 text-white m-0">
+
+    <main class="flex flex-col justify-around h-[100vh] text-[20px] font-bold">
+        <div id="mainMenu" class="flex justify-around">
+            <div class="grid gap-[50px] outline py-[30px] w-[600px] max-[640px]:w-[350px] rounded-[5px]">
+                <div class="flex justify-evenly h-[150px] max-[640px]:mx-[10px]">
+                    <div class="flex flex-col justify-evenly">
+                        <h1 class="h-fit">Budgeting with Bobby</h1>
+                    </div>
+                    <div>
+                        <div class="bg-[url('/assets/bobby.jpg')] bg-cover bg-center w-[150px] h-[150px] rounded-full"></div>
+                        <div class="text-center">
+                            <p>Bobby</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly outline py-[10px]">
+                    <div>
+                        <p id="budgetLeft" class="text-center">0.00</p>
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly">
+                    <div class="grid gap-[10px]">
+                        <div class="bg-blue-900">
+                            <button id="goToBudgetBtn" class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15">Update Budget</button>
+                        </div>
+                        <div class="bg-red-900">
+                            <button id="goToAddExpensesBtn" class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15">Add Expense</button>
+                        </div>
+                        <div class="bg-green-900">
+                            <button id="goToManageExpensesBtn" class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15">Manage Expenses</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="grid">
+                    <div class="flex justify-evenly outline py-[7px]">
+                        <div>
+                            <p>Budget:</p>
+                        </div>
+                        <div>
+                            <p id="startingBudget">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Budget -->
+        <section id="updateBudget" class="hidden flex justify-around">
+            <div class="grid gap-[50px] outline py-[30px] w-[600px] max-[640px]:w-[350px] rounded-[5px]">
+                <div class="flex justify-evenly max-[640px]:mx-[10px]">
+                    <div>
+                        <h2>Bobby says make sure your budget<br/> leaves wiggle room for emergencies</h2>
+                    </div>
+                    <div id="exitBudgetMenu" class="hover:cursor-pointer hover:text-red-500">
+                        <p>&#x2715;</p>
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly">
+                    <input
+                        id="budgetInput"
+                        class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15"
+                        type="text"
+                        placeholder="Input Budget">
+                </div>
+        
+                <div class="flex justify-evenly">
+                    <div class="bg-blue-900 w-[195px]">
+                        <button id="updateBudgetBtn" class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15">Update Budget</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Add Expenses -->
+        <section id="addExpensesMenu" class="hidden flex justify-around">
+            <div class="grid gap-[50px] outline py-[30px] w-[600px] max-[640px]:w-[350px] rounded-[5px]">
+                <div class="flex justify-evenly max-[640px]:mx-[10px]">
+                    <div>
+                        <h2>Bobby wants to see how<br/>you spend your monies</h2>
+                    </div>
+                    <div id="exitAddExpensesMenu" class="hover:cursor-pointer hover:text-red-500">
+                        <p>&#x2715;</p>
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly max-[640px]:grid">
+                    <div>
+                        <input
+                            id="expenseNameInput"
+                            class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15 max-[640px]:mb-[5px]"
+                            type="text"
+                            placeholder="Name of Expense">
+                    </div>
+                    <div>
+                        <input
+                            id="expenseCostInput"
+                            class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15 max-[640px]:row-start-2"
+                            type="text"
+                            placeholder="Cost of Expense">
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly">
+                    <div class="bg-blue-900 w-[195px]">
+                        <button id="addExpenseBtn" class="hover:cursor-pointer w-[195px] outline rounded-[5px] hover:bg-white/15">Add</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Manage Expenses -->
+        <section id="manageExpensesMenu" class="hidden flex justify-around">
+            <div class="grid gap-[50px] outline py-[30px] w-[600px] max-[640px]:w-[350px] rounded-[5px]">
+                <div class="flex justify-evenly max-[640px]:mx-[10px]">
+                    <div>
+                        <h2>Bobby is proud of you</h2>
+                    </div>
+                    <div id="exitManageExpensesMenu" class="hover:cursor-pointer hover:text-red-500">
+                        <p>&#x2715;</p>
+                    </div>
+                </div>
+        
+                <div class="flex justify-evenly">
+                    <div id="expensesManaged" class="flex flex-col justify-evenly"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
